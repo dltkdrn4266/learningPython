@@ -6,7 +6,6 @@ from .models import Post
 from django.utils import timezone
 from django.shortcuts import render, get_object_or_404, redirect
 from .forms import PostForm
-from django.contrib import messages
 
 def post_list(request):
     Posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
